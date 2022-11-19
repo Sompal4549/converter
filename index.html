@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mile to Kilometer / Fahrenheit to Celsius Converter</title>
+</head>
+<body>
+  <main>
+<h1>Speed converter</h1>
+<p>Type a value in MPH field to convert the value to KPH:</p>
+<p>
+  <label>
+    MPH
+  </labe>
+  <input id="inputMPH" type="number" placeholder="MPH" oninput="speedConverter(this.value)" onchange="speedConverter(this.value)">
+  KPH
+  <input readonly id="output" type="number"/>
+  <!-- <p id="output"></p> -->
+
+</p>
+<p><label>Fahrenheit</label>
+  <input id="fahInput" type="number" placeholder="fahrenheit" oninput="celciusConverter(this.value)" onchange="celciusConverter(this.value)" />
+  <label>Celsius</label>
+  <input readonly id="celOutput" placeholder="celsius"/>
+  
+</p>
+  </main>
+  <script>
+    function celciusConverter(fah){
+      document.getElementById("celOutput").value = (5/9)*(fah - 32);
+    }
+    function speedConverter(value){
+      document.getElementById("output").value = value * 1.609344;
+    }
+  </script>
+</body>
+</html>
